@@ -1,0 +1,268 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Swiss-inspired minimalist design system for Meda's portfolio 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Ultra-minimal Swiss palette */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+    
+    /* Refined charcoal tones */
+    --charcoal: 0 0% 10%;
+    --charcoal-light: 0 0% 25%;
+    --charcoal-lighter: 0 0% 45%;
+    --charcoal-lightest: 0 0% 65%;
+    
+    /* Refined blue accents */
+    --accent-blue: 210 100% 98%;
+    --accent-blue-medium: 210 60% 92%;
+    --accent-blue-strong: 210 100% 50%;
+    --accent-blue-deep: 210 100% 40%;
+    
+    /* Minimal typography scale */
+    --text-hero: clamp(2.5rem, 8vw, 4.5rem);
+    --text-h1: clamp(2rem, 5vw, 3rem);
+    --text-h2: clamp(1.5rem, 4vw, 2.25rem);
+    --text-h3: clamp(1.25rem, 3vw, 1.75rem);
+    --text-body: 1.125rem;
+    --text-small: 0.95rem;
+    
+    /* Generous spacing system */
+    --space-xs: 0.75rem;
+    --space-sm: 1.5rem;
+    --space-md: 3rem;
+    --space-lg: 6rem;
+    --space-xl: 9rem;
+    --space-2xl: 12rem;
+    
+    /* Ultra-subtle shadows */
+    --shadow-minimal: 0 1px 3px rgba(0, 0, 0, 0.04);
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.06);
+    --shadow-medium: 0 8px 40px rgba(0, 0, 0, 0.08);
+    
+    /* Smooth animations */
+    --transition-minimal: all 0.2s ease-out;
+    --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+
+    --primary: 210 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 100% 98%;
+    --secondary-foreground: 0 0% 10%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 210 100% 98%;
+    --accent-foreground: 0 0% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 92%;
+    --input: 0 0% 92%;
+    --ring: 210 100% 50%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+  }
+}
+
+@layer components {
+  /* Ultra-minimal typography */
+  .text-hero {
+    font-size: var(--text-hero);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+  }
+  
+  .text-h1 {
+    font-size: var(--text-h1);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+  
+  .text-h2 {
+    font-size: var(--text-h2);
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+  
+  .text-h3 {
+    font-size: var(--text-h3);
+    font-weight: 500;
+    line-height: 1.35;
+  }
+
+  .text-body {
+    font-size: var(--text-body);
+    font-weight: 400;
+    line-height: 1.6;
+  }
+  
+  /* Generous spacing */
+  .space-section {
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+  }
+  
+  .space-section-sm {
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-lg);
+  }
+  
+  /* Minimal buttons */
+  .btn-minimal {
+    @apply inline-flex items-center justify-center px-8 py-4 text-sm font-medium rounded-full;
+    @apply border border-transparent transition-all duration-300;
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent-blue-deep)) 100%);
+    box-shadow: var(--shadow-minimal);
+  }
+  
+  .btn-minimal:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .btn-outline-minimal {
+    @apply inline-flex items-center justify-center px-8 py-4 text-sm font-medium rounded-full;
+    @apply border border-current transition-all duration-300;
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+    color: hsl(var(--charcoal));
+    border-color: hsl(var(--border));
+  }
+  
+  .btn-outline-minimal:hover {
+    transform: translateY(-2px);
+    background: hsl(var(--accent-blue));
+    border-color: hsl(var(--primary));
+    color: hsl(var(--primary));
+  }
+  
+  /* Minimal cards */
+  .card-minimal {
+    @apply bg-background rounded-2xl border border-border transition-all duration-300;
+    box-shadow: var(--shadow-minimal);
+  }
+  
+  .card-minimal:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-soft);
+    border-color: hsl(var(--accent-blue-medium));
+  }
+  
+  /* Profile styling */
+  .profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: var(--shadow-soft);
+    border: 4px solid hsl(var(--background));
+  }
+  
+  /* Clean grid layouts */
+  .grid-minimal {
+    display: grid;
+    gap: var(--space-md);
+  }
+  
+  /* Subtle animations */
+  .fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Section backgrounds */
+  .section-accent {
+    background: linear-gradient(180deg, hsl(var(--accent-blue)) 0%, hsl(var(--background)) 100%);
+  }
+}
