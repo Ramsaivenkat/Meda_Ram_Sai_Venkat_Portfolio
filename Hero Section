@@ -1,0 +1,62 @@
+import { Button } from "@/components/ui/button";
+import { Download, Linkedin } from "lucide-react";
+
+const profileImageUrl = "/lovable-uploads/cc1e73d2-1c83-4988-b6ff-f2a604376803.png";
+
+const HeroSection = () => {
+  return (
+    <section className="space-section">
+      <div className="container mx-auto px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="fade-in">
+            <img 
+              src={profileImageUrl} 
+              alt="Meda Ram Sai Venkat - Data Engineer" 
+              className="profile-image mx-auto mb-12"
+            />
+            
+            <div className="space-y-6 mb-12">
+              <h1 className="text-hero text-charcoal">
+                Meda Ram Sai Venkat
+              </h1>
+              
+              <div className="space-y-3">
+                <h2 className="text-h3 text-charcoal-light font-normal">
+                  Data Engineer, Wipro – Bangalore
+                </h2>
+                
+                <p className="text-body text-charcoal-lighter max-w-2xl mx-auto">
+                  Fueling data-driven transformation through innovative cloud engineering.
+                </p>
+              </div>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <a 
+                href="https://drive.google.com/file/d/1Ibbxjp6fa7lMUYQtnTB7Byn_bVSv599W/view?usp=sharing" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-minimal text-white"
+              >
+                <Download className="w-5 h-5 mr-3" />
+                Download Resume
+              </a>
+              
+              <a 
+                href="https://www.linkedin.com/in/medaramsaivenkat300718" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="btn-outline-minimal"
+              >
+                <Linkedin className="w-5 h-5 mr-3" />
+                Connect on LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default HeroSection;
